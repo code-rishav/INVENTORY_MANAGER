@@ -1,0 +1,88 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'accounts.css' %}">
+    <title>ACCOUNTS</title>
+</head>
+<body>
+    <div id="mysidenav" class="sidenav">
+        <span><a href="{% url 'index' %}">HOME</a></span>   
+        <span class="buy">LENDED</span>
+        <span class="sold">RECEIVED</span>
+        <span class="st">CURRENT</span>
+       </div>
+       <div class="purchase">
+           <h2>LENDED AMOUNT</h2>
+           <table id="tableData">
+               <tr>
+                   <th>STORE</th>
+                   <th>DATE</th>
+                   <th>AMOUNT</th>
+               </tr>
+               
+                   {% if lended_d %}
+                        {% for p in lended_d %}
+                        <tr>
+                            <td>{{ p.store_name }}</td>
+                            <td>{{ p.date }}</td>
+                            <td>{{p.amount_lended}}</td>
+                        </tr>
+                        {% endfor %}
+                   {% else %}
+                        <p>NO DATA</p>
+                   {% endif %}
+                
+           </table>
+       </div>
+    
+    
+       <div class="sale">
+               <h2>AMOUNT RECEIVED TABLE</h2>
+        <table id="tableData">
+            <tr>
+                <th>STORE</th>
+                <th>DATE</th>
+                <th>AMOUNT</th>
+            </tr>
+            {% if received_d %}
+                        {% for p in received_d %}
+                        <tr>
+                            <td>{{ p.store_name }}</td>
+                            <td>{{ p.date }}</td>
+                            <td>{{p.amount_received}}</td>
+                        </tr>
+                        {% endfor %}
+                   {% else %}
+                        <p>NO DATA</p>
+                   {% endif %}
+        </table>
+    </div>
+    <div class="stock">
+        <h2>ACCOUNT STATUS TABLE</h2>
+     <table>
+         <tr>
+             <th>STORE</th>
+             <th>AMOUNT</th>
+         </tr>
+         <tr>
+            {% if amount_d %}
+            {% for p in amount_d %}
+            <tr>
+                <td>{{ p.store_name }}</td>
+                <td>{{p.amount}}</td>
+            </tr>
+            {% endfor %}
+       {% else %}
+            <p>NO DATA</p>
+       {% endif %}
+         </tr>
+     </table>
+    </div>
+<script src="{% static 'accounts.js' %}"></script>
+</body>
+</html>

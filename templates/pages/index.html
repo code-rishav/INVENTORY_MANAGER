@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'home.css' %}">
+    <title>My Inventory</title>
+</head>
+<body>
+
+    <div class="intro">
+        <h1>
+        WELCOME TO YOUR INVENTORY
+        </h1>
+    </div>
+    <div class="menu">
+    <ul>
+        <li>
+            <a href="{% url 'stocks' %}">
+            Stock Entry
+            </a>
+        </li>
+    
+        <li>
+            <a href="{% url 'accounts' %}">
+            Accounts
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'bills' %}">
+            Generate Bills
+            </a>
+        </li>
+       
+        <li>
+            <a href="{% url 'admin:index' %}">
+            ADMIN
+            </a>
+        </li>
+    </ul>
+    </div>
+</body>
+</html>

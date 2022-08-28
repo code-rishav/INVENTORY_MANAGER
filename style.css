@@ -1,0 +1,172 @@
+body{
+    background-color: whitesmoke;
+}
+nav{
+    border-bottom-width: 2px;
+    border-bottom-color: antiquewhite;
+    border-bottom-style: solid;
+    margin-bottom: 5px;
+    background-color: azure;
+    padding: 5px;
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+
+}
+.div1{
+    padding: 70px;
+}
+
+label,input,textarea{
+    display: block;
+}
+form{
+    margin: 0 auto;
+    width: 25%;
+    padding: 20px;
+    border: 2px solid #ccc;
+    background-color: white;
+
+}
+label{
+    margin-bottom: 5px;
+    color: blue;
+
+}
+input{
+    margin-bottom: 5px;
+    width: 100%;
+}
+textarea{
+    width: 100%;
+    margin-bottom: 10px;
+}
+button{
+    margin: 2px 45% 2px;
+    border-radius: 20%;
+    padding: 3px;
+}
+.link:hover{
+    text-decoration: underline;
+    text-decoration-color: green;
+    color: red;
+    border: 2px solid black;
+    border-radius: 20% 20%;
+    
+}
+ul li{
+    list-style-type: none;
+    border: 2px solid grey;
+    width: 100px;
+    text-align: center;
+    padding: 2px;
+    margin: 1px;
+    background-color: aquamarine;
+}
+ul li:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.dis{
+    border: 2px solid red;
+    display: block;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+}
+.child1{
+    border: 2px solid black;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.child1:hover{
+    background-color: blue;
+    cursor: pointer;
+}
+.para{
+    border: 2px solid red;
+    height: 100px;
+    overflow: scroll;
+}
+
+.set{
+    margin: 10px auto;
+    height: 400px;
+    width: 250px;
+    position: relative;
+    border: 2px solid #ccc;
+    justify-content: center;
+}
+#head{
+    width: 250px;
+    height: 250px;
+    background-color: azure;
+    text-align: center;
+}
+#title{
+    border-bottom: 1px solid #bbb;
+    padding: 3px;
+    margin-left: 5px;
+
+}
+.set:hover{
+    box-shadow: 4px 4px 0 #ddd;
+    cursor: pointer;
+}
+.trans{
+    margin: 40px auto;
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+    content: 'naaaaane';
+}
+.trans:hover{
+    height: 120px;
+    width: 120px;
+    content: 'name';
+    color: white;
+    transition: 1s width linear;
+}
+.t{
+    text-decoration: none;
+    transition-delay: 400ms;
+    transition-property: color,text-shadow;
+    transition-timing-function: linear;
+    color: brown;
+}
+.t:hover{
+    color: red;
+    text-shadow: 2px 2px;
+}
+.g1{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    background-color: white;
+}
+.g2{
+    top:0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background-color: red;
+    transition-property: left;
+    transition-delay: 250ms;
+    transition-timing-function: ease-in;
+
+}
+.g1:hover .g2{
+    left: calc(100% - 50px);
+}
+
+#math:hover{
+    cursor: pointer
+}

@@ -1,0 +1,56 @@
+.h1{
+    border: 0ch;
+}
+div{
+    margin: 0px;
+}
+#title{
+    border: 1px solid black;
+}
+#title h3{
+    text-align: center;
+    margin: 1px;
+    border-bottom: 0px;
+
+}
+.container{
+    border: 1px solid black;
+    height: 340px;
+}
+.container div{
+    height: 250px;
+    padding: 5px;
+}
+#owner{
+    width: 33%;
+    float: left;
+    border-right: 1px solid black;
+}
+#buyer{
+    width: 31.3%;
+    float: left;
+    border-right: 1px solid black;
+
+}
+#info{
+    width: 33%;
+    float: right;
+}
+.logo{
+    background-image: url('logo.png');
+    height: 100px;
+    width: 100%;
+    background-size: cover;
+}
+#info{
+    float: right;
+
+}
+.border{
+    border-bottom: 1px solid black;
+}
+.items{
+    height: 40px;
+    width: 100%;
+    border: 2px solid red;
+}

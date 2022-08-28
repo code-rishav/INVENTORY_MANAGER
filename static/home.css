@@ -1,0 +1,50 @@
+body{
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: #1111;
+}
+div{
+    margin: auto;
+}
+.menu{
+    margin-top: 180px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgba(201, 189, 189, 0.8);
+    width: 240px;
+    padding: 5px;
+    background-color: rgba(242, 243, 247, 0.781);
+
+   
+
+}
+ul{
+    padding: 5px;
+    color: white;
+}
+ul li{
+    margin: 4px;
+    list-style: none;
+    border: 1px solid #aaaa;
+    text-align: center;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+ul li:hover{
+    background-color: #eee;
+    cursor: pointer;
+    box-shadow: 2px 2px #cccc;
+
+}
+ul li a{
+    text-decoration: none;
+}
+.intro{
+    margin-top: 70px;
+    text-align: center;
+    font-size: larger;
+    border-bottom: 2px solid #aaaa;
+
+}
