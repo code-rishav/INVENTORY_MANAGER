@@ -32,8 +32,7 @@ class stock(models.Model):
         self.items = self.get_items
         self.price = self.get_price
         super(stock,self).save(*args,**kwargs)
-
-
+        
 
 class purchase(models.Model):
     items = models.ForeignKey(item,on_delete=models.DO_NOTHING)
