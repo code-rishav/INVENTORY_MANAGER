@@ -1,0 +1,122 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'stock.css' %}">
+    <title>STOCKS</title>
+</head>
+<body>
+    <div id="mysidenav" class="sidenav">
+        <span><a href="{% url 'index' %}">HOME</a></span>   
+        <span class="buy">PURCHASE</span>
+        <span class="sold">SALE</span>
+        <span class="st">STOCK</span>
+        
+       <div class="purchase">
+        <div>
+            <h2>PURCHASE TABLE</h2>
+            <div>
+                <p>Apply Filter</p>
+                <label for="start-date">Start Date</label>
+                <input type="date" id="pdate_input">
+                <label for="end-date">End Date</label>
+                <input type="date" id="pdate_input2">
+                <button onclick = "searchbyDate_purchase()">SUBMIT</button>
+            </div>
+            <div class="price_p"></div>
+            </div>
+           <table id="tableData_p">
+               <tr>
+                   <th>Item</th>
+                   <th>Date</th>
+                   <th>box</th>
+                   <th>rate</th>
+                   <th>price</th>
+               </tr>
+               
+                   {% if purchase_d %}
+                        {% for p in purchase_d %}
+                        <tr>
+                            <td>{{ p.items }}</td>
+                            <td>{{ p.date }}</td>
+                            <td>{{p.boxes}}</td>
+                           <td>{{p.rate}}</td>
+                            <td>{{p.price}}</td>
+                        </tr>
+                        {% endfor %}
+                   {% else %}
+                        <p>NO DATA</p>
+                   {% endif %}
+                
+           </table>
+       </div>
+    
+    
+       <div class="sale">
+           <div>
+               <h2>SALES TABLE</h2>
+               <div>
+                   <p>Apply Filter</p>
+                   <label for="start-date">Start Date</label>
+                   <input type="date" id="sdate_input">
+                   <label for="end-date">End Date</label>
+                   <input type="date" id="sdate_input2">
+                   <button onclick = "searchbyDate_sale()">SUBMIT</button>
+               </div>
+               <div class="price_s"></div>
+               </div>
+           
+
+        <table id="tableData_s">
+            <tr>
+                <th>Item</th>
+                <th>Date</th>
+                <th>Rate</th>
+                <th>Boxes OUT</th>
+                <th>Boxes RETURN</th>
+                <th>Price</th>
+            </tr>
+            {% if sale_d %}
+                        {% for p in sale_d %}
+                        <tr>
+                            <td>{{ p.items }}</td>
+                            <td>{{ p.date }}</td>
+                            <td>{{p.rate}}</td>
+                            <td>{{p.boxes_out}}</td>
+                            <td>{{p.boxes_return}}</td>
+                            <td>{{p.price}}</td>
+                        </tr>
+                        {% endfor %}
+                   {% else %}
+                        <p>NO DATA</p>
+                   {% endif %}
+        </table>
+    </div>
+    <div class="stock">
+        <h2>STOCKS TABLE</h2>
+     <table>
+         <tr>
+             <th>Item</th>
+             <th>box</th>
+         </tr>
+         <tr>
+            {% if stock_d %}
+            {% for p in stock_d %}
+            <tr>
+                <td>{{ p.items }}</td>
+                <td>{{p.box}}</td>
+            </tr>
+            {% endfor %}
+       {% else %}
+            <p>NO DATA</p>
+       {% endif %}
+         </tr>
+     </table>
+    </div>
+<script src="{% static 'stock.js' %}"></script>
+</body>
+</html>
